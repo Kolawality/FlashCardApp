@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import FlashcardList from "./components/FlashcardList";
 import "./styles.css";
 import axios from "axios";
+import { Button } from "@material-ui/core";
 
 function App() {
   const [flashcards, setFlashcards] = useState([]);
@@ -48,7 +49,8 @@ function App() {
 
   return (
     <>
-      <form className="header" onSubmit={handleSubmit}>
+      <div className="icon">By Michael Kolawole</div>
+      <form className="header" onSubmit={handleSubmit}>        
         <div className="form-group">
           <label htmlFor="category">Category</label>
           <select id="category" ref={categoryEl}>
@@ -74,6 +76,9 @@ function App() {
         </div>
         <div className="form-group">
           <button className="btn">Generate</button>
+          {/* <Button variant="contained" color="primary">
+            Generate
+          </Button> */}
         </div>
       </form>
       <div className="container">
